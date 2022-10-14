@@ -33,7 +33,9 @@ int main(void)
 					}
 				}
 				else if (c < a)
+				{
 					;
+				}
 			}
 		}
 	}
