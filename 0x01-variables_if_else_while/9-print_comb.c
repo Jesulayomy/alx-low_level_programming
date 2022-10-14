@@ -8,7 +8,6 @@
 int main(void)
 {
 	int numb;
-	int n = 0;
 
 	for (numb = 48; numb < 58; numb++)
 	{
