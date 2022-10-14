@@ -17,7 +17,13 @@ int main(void)
 		{
 			for (d = 48; d < 58; d++)
 			{
-				if ((c >= a) && (b <= d))
+				if (c < a)
+					;
+				else if (((c == a) && (b >= d)))
+				{
+					;
+				}
+				else
 				{
 					putchar(a);
 					putchar(b);
@@ -31,10 +37,6 @@ int main(void)
 						putchar(44);
 						putchar(32);
 					}
-				}
-				else if (c < a)
-				{
-					;
 				}
 			}
 		}
