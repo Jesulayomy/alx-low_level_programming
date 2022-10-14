@@ -32,6 +32,8 @@ int main(void)
 						putchar(32);
 					}
 				}
+				else if (c < a)
+					;
 			}
 		}
 	}
