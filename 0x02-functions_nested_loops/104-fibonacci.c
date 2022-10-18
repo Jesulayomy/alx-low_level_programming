@@ -1,61 +1,43 @@
 #include <stdio.h>
-#include "main.h"
-
-void print_fibonacci(int);
 
 /**
- * main - for callling
+ * main - print fibonacci
  *
- * Return: ret 0
+ * Return: always 0
  */
 int main(void)
 {
-	int n = 98;
+	unsigned long int a, a1, a2, b, b1, b2, c, c1, c2, d, e;
 
-	print_fibonacci(n);
+	a = 1;
+	b = 2;
+	c = a + b;
+
+	printf("%lu, ", a);
+	printf("%lu, ", b);
+
+	for (d = 3; d < 89; d++)
+	{
+		printf("%lu, ", c);
+		a = b;
+		b = c;
+		c = a + b;
+	}
+	b1 = b / 1000000000;
+	b2 = b % 1000000000;
+	c1 = c / 1000000000;
+	c2 = c % 1000000000;
+	for (e = 89; e < 98; e++)
+	{
+		printf("%lu%lu, ", c1, c2);
+		a1 = b1;
+		a2 = b2;
+		b1 = c1;
+		b2 = c2;
+		c1 = a1 + b1 + ((a2 + b2) / 1000000000);
+		c2 = (a2 + b2) % 1000000000;
+	}
+	printf("%lu%lu\n", c1, c2);
 
 	return (0);
-}
-
-/**
- * print_fibonacci - the sequence
- * @i: input
- */
-void print_fibonacci(int i)
-{
-	int a;
-	long int b, fb, lb, fl, ll;
-	long int l = 2;
-	long int p = 1;
-
-	printf("%ld, %ld, ", p, l);
-
-	for (a = 3; a < 89; a++)
-	{
-		b = p + l;
-
-		printf("%ld, ", b);
-
-		p = l;
-		l = b;
-	}
-
-	fl = l / 1000000000;
-	ll = l % 1000000000;
-	fb = b / 1000000000;
-	lb = b % 1000000000;
-
-	for (a = 89; a < i; a++)
-	{
-		printf("%ld%ld, ", fb, lb);
-
-		p = fl;
-		l = ll;
-		fl = fb;
-		ll = lb;
-		fb = p + fl + ((l + ll) / 1000000000);
-		lb = (l + ll) % 1000000000;
-	}
-
-	printf("%ld%ld\n", fb, lb);
 }
