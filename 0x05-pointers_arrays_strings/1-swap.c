@@ -9,7 +9,9 @@
  */
 void swap_int(int *a, int *b)
 {
+	int const c = *a;
 	int *swapa = a;
 	int *swapb = b;
-	
+	*swapa = *b;
+	*swapb = c;
 }
