@@ -8,17 +8,19 @@
  */
 void print_rev(char *s)
 {
-	int i, s, n
+	int i, m;
 
 	/* Count the number of elements in the array */
-	for (i = 0; str[i]; i++)
+
+	for (i = 0; s[i] != '\0'; i++)
 	{
 		;
 	}
 
-	for (; 
-		s = (int) str[i];
-		_putchar(s);
+	for (; i >= 0; i--)
+	{
+		m = (int) s[i];
+		_putchar(m);
 	}
 	_putchar(10);
 }
