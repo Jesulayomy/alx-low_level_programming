@@ -8,13 +8,13 @@
  */
 void puts2(char *str)
 {
-	int i;
+	int i = 0;
 	int s;
 
-	for (i = 0; str[i]; i++)
+	while ((str[i] != '\0') || (str[i] != '\\'))
 	{
 		s = (int) str[i];
-		i++;
+		i += 2;
 		_putchar(s);
 	}
 	_putchar(10);
