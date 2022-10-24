@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * puts2 - a fake helf string printer
+ * puts2 - a fake half string printer
  * @str: the pointer to a string
  *
  * Return: nil
@@ -9,13 +9,18 @@
 void puts2(char *str)
 {
 	int i = 0;
-	int s;
+	int n;
 
-	while ((str[i] != '\0') || (str[i] != '\\'))
+	for (n = 0; str[n] != 0; n++)
 	{
-		s = (int) str[i];
-		i += 2;
-		_putchar(s);
+	}
+
+	for (i = 0; i < n; i++)
+	{
+		if (i % 2 == 0)
+		{
+			_putchar(str[i]);
+		}
 	}
 	_putchar(10);
 }
