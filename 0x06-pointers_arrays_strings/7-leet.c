@@ -8,29 +8,19 @@
  */
 char *leet(char *n)
 {
-	int i;
+	int i, j;
+	char low[] = "aeotl";
+	char l3t[] = "43071";
 
 	for (i = 0; n[i] != '\0'; i++)
 	{
-		if (n[i] == 'a' || n[i] == 'A')
+		for (j = 0; j < 5 ; j++)
 		{
-			n[i] = '4';
-		}
-		else if (n[i] == 'e' || n[i] == 'E')
-		{
-			n[i] = '3';
-		}
-		else if (n[i] == 'o' || n[i] == 'O')
-		{
-			n[i] = '0';
-		}
-		else if (n[i] == 't' || n[i] == 'T')
-		{
-			n[i] = '7';
-		}
-		else if (n[i] == 'l' || n[i] == 'L')
-		{
-			n[i] = '1';
+			if (n[i] == low[j] || n[i] == low[j - 32])
+			{
+				n[i] = l3t[j];
+				break;
+			}
 		}
 	}
 
