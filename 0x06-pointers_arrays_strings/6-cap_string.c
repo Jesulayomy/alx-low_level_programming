@@ -2,46 +2,27 @@
 
 /**
  * cap_string - capitalizes the words in a string.
- * @n: the string in question
+ * @s: the string in question
  *
  * Return: the camel string
  */
-char *cap_string(char *n)
+char *cap_string(char *s)
 {
-	int up = 'a' - 'A';	/* Difference between lower and uppercase */
-	int i;
+	int x, y;
 
-	for (i = 0; n[i] != '\0'; i++)
+	char seprator[] = " \t\n,;.!?\"(){}";
+
+	for (x = 0; s[x] != '\0'; x++)
 	{
-		if ((n[i] == 32) || (n[i] == '\t'))
+		for (y = 0; seprator[y] != '\0'; y++)
 		{
-			if ((n[i + 1] >= 'a') && (n[i + 1] <= 'z'))
-			{
-				n[i + 1] -= up;
-			}
+		if (x == 0 || s[x - 1] == seprator[y])
+		{
+			if (s[x] > 97 && s[x] < 123)
+				s[x] -= 32;
 		}
-		else if ((n[i] == '\n') || (n[i] == ',') || (n[i] == ';'))
-		{
-			if ((n[i + 1] >= 'a') && (n[i + 1] <= 'z'))
-			{
-				n[i + 1] -= up;
-			}
-		}
-		else if ((n[i] == '.') || (n[i] == '!') || (n[i] == '?') || (n[i] == '"'))
-		{
-			if ((n[i + 1] >= 'a') && (n[i + 1] <= 'z'))
-			{
-				n[i + 1] -= up;
-			}
-		}
-		else if ((n[i] == '(') || (n[i] == ')') || (n[i] == '{') || (n[i] == '}'))
-		{
-			if ((n[i + 1] >= 'a') && (n[i + 1] <= 'z'))
-			{
-				n[i + 1] -= up;
-			}
 		}
 	}
 
-	return (n);
+	return (s);
 }
