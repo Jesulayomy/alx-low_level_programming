@@ -19,7 +19,6 @@ char *leet(char *n)
 			if (n[i] == low[j] || n[i] == low[j - 32])
 			{
 				n[i] = l3t[j];
-				break;
 			}
 		}
 	}
