@@ -8,42 +8,42 @@
 
 void print_buffer(char *b, int size)
 {
-	int x, y;
+	int i, j;
 
-	x = 0;
+	i = 0;
 	if (size <= 0)
 		putchar('\n');
 	else
 	{
-		while (x < size)
+		while (i < size)
 		{
-			printf("%08x: ", x);
-			y = 0;
-			while (y < 10)
+			printf("%08x: ", i);
+			j = 0;
+			while (j < 10)
 			{
-				if (y % 2 == 0 && y > 0)
+				if (j % 2 == 0 && j > 0)
 					printf(" ");
-				if (y + x > size - 1)
+				if (j + i > size - 1)
 					printf(" ");
 				else
-					printf("%.2x", b[y + x]);
-				y++;
+					printf("%.2x", b[j + i]);
+				j++;
 			}
 			putchar(' ');
-			y = 0;
-			while (y < 10)
+			j = 0;
+			while (j < 10)
 			{
-				if (y + x > size - 1)
+				if (j + i > size -1)
 					break;
-				if (b[y + x] >= ' ' && b[y + x] <= '~')
-					putchar(b[y + x]);
+				if (b[j + i] >= ' ' && b[j + i] <= '~')
+					putchar(b[j + i]);
 				else
 					putchar('.');
-				y++;
+				j++;
 
 			}
 			putchar('\n');
-			x += 10;
+			i += 10;
 		}
 	}
 }
