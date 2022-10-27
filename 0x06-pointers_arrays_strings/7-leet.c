@@ -8,13 +8,13 @@
  */
 char *leet(char *n)
 {
-	int i, j;
-	char low[] = "aeotl";
-	char l3t[] = "43071";
+	int i, j, l = 5;
+	char low[6] = "aeotl";
+	char l3t[6] = "43071";
 
 	for (i = 0; n[i] != '\0'; i++)
 	{
-		for (j = 0; j < 5 ; j++)
+		for (j = 0; j < l ; j++)
 		{
 			if (n[i] == low[j] || n[i] == low[j - 32])
 			{
