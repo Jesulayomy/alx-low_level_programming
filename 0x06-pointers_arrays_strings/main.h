@@ -4,7 +4,11 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
+#include <stdlib.h>
 
+int char_len(char *);
+char *add_0(char *, char *, int, int);
+char *cut_0(char *);
 void print_buffer(char *b, int size);
 char *infinite_add(char *n1, char *n2, char *r, int size_r);
 char _putchar(char);
