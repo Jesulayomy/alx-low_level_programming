@@ -8,27 +8,20 @@
  */
 char *leet(char *n)
 {
-	int a, b, l = 5;
-	char r[5] = {'A', 'E', '0', 'T', 'L'};
-	char s[5] = {'4', '3', '0', '7', '1'};
+	int i, j;
 
-	while (n[a])
+	int tokens[] = {65, 69, 79, 84, 76};
+	int repl[] = {4, 3, 0, 7, 1};
+	int tokens_len = 5;
+
+	for (i = 0; n[i] != '\0'; i++)
 	{
-		b = 0;
-
-		while (b < l)
+		for (j = 0; j < tokens_len; j++)
 		{
-			if (n[a] == r[b] || n[a] == r[b] + 32)
-			{
-				n[a] = s[b];
-			}
-
-			b++;
+			if (n[i] == tokens[j] || n[i] == tokens[j] + 32)
+				n[i] = repl[j] + 48;
 		}
-
-		a++;
 	}
 
 	return (n);
-
 }
