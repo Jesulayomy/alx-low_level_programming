@@ -1,6 +1,26 @@
 #include "main.h"
 
 /**
+ * _sqrt_recur - finds the square root of a number
+ * @num: the number
+ * @find: our counter
+ * Return: int root or an error
+ */
+int _sqrt_recur(int num, int find)
+{
+	if  ((find * find) == num)
+	{
+		return (find);
+	}
+	else if ((find * find) > num)
+	{
+		return (-1);
+	}
+
+	return (_sqrt_recur(num, find + 1));
+}
+
+/**
  * _sqrt_recursion - finds the square root of a number
  * @n: the number
  *
@@ -8,22 +28,5 @@
  */
 int _sqrt_recursion(int n)
 {
-	int find;
-
-	if (n < 0)
-	{
-		return (-1);
-	}
-	else
-	{
-		for (find = 0; find <= n; find++)
-		{
-			if ((find * find) == n)
-			{
-				return (find);
-			}
-		}
-	}
-
-	return (-1);
+	return (_sqrt_recur(n, 0));
 }
