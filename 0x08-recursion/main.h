@@ -9,6 +9,8 @@
 void _puts_recursion(char *s);
 int is_prime(int, int);
 int is_prime_number(int n);
+int is_palindrome(char *s);
+int _palindrome(char *, int);
 void _print_rev_recursion(char *s);
 int _putchar(char c);
 int _strlen_recursion(char *s);
