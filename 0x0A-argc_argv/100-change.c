@@ -12,48 +12,44 @@
 
 int main(int argc, char *argv[])
 {
-	int coin;
+	int coin = 0;
 	int amount;
 
-	amount = atoi(*(argv + 1));
-	
-	if (argc != 2)
+	if (argc == 2)
+	{
+		amount = atoi(argv[1]);
+		while (amount >= 25)
+		{
+			amount -= 25;
+			coin++;
+		}
+		while (amount >= 10)
+		{
+			amount -= 10;
+			coin++;
+		}
+		while (amount >= 5)
+		{
+			amount -= 5;
+			coin++;
+		}
+		while (amount >= 2)
+		{
+			amount -= 2;
+			coin++;
+		}
+		while (amount >= 1)
+		{
+			amount -= 1;
+			coin++;
+		}
+
+		printf("%d\n", coin);
+	}
+	else
 	{
 		printf("Error\n");
 		return (1);
 	}
-
-	if (atoi(argv[1]) < 0)
-	{
-		printf("0\n");
-		return (0);
-	}
-
-	for (coin = 0; amount > 0; coin++)
-	{
-		if (amount > 25)
-		{
-			amount -= 25;
-		}
-		else if (amount > 10)
-		{
-			amount -= 10;
-		}
-		else if (amount > 5)
-		{
-			amount -= 5;
-		}
-		else if (amount > 2)
-		{
-			amount -= 2;
-		}
-		else if (amount > 1)
-		{
-			amount -= 1;
-		}
-	}
-
-	printf("%d\n", coin);
-
 	return (0);
 }
