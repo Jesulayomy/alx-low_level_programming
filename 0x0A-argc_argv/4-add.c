@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 	{
 		if (atoi(argv[p]) == 0)
 		{
-			;
+			sum += atoi(argv[p]);
 		}
 		else if (sum == (sum + atoi(argv[p])))
 		{
@@ -38,6 +38,6 @@ int main(int argc, char *argv[])
 	}
 
 	printf("%d\n", sum);
-	
+
 	return (0);
 }
