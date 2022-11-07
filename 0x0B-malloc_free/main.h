@@ -13,6 +13,7 @@ char *argstostr(int, char **);
 char *_strdup(char *);
 int **alloc_grid(int, int);
 void free_grid(int **, int);
+char **strtow(char *);
 char *str_concat(char *, char *);
 
 #endif
