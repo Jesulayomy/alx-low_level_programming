@@ -9,6 +9,7 @@
 #include <math.h>
 
 char *create_array(unsigned int, char);
+char *argstostr(int, char **);
 char *_strdup(char *);
 int **alloc_grid(int, int);
 void free_grid(int **, int);
