@@ -9,5 +9,6 @@
 void *malloc_checked(unsigned int);
 char *string_nconcat(char *, char *, unsigned int);
 int _putchar(char);
+void *_calloc(unsigned int, unsigned int);
 
 #endif
