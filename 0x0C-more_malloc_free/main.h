@@ -13,8 +13,9 @@ int _putchar(char);
 void *_calloc(unsigned int, unsigned int);
 int *array_range(int, int);
 void *_realloc(void *, unsigned int, unsigned int);
-void _is_zero(char *argv[]);
-char *_initialize_array(char *, int);
-int _checknum(char *argv[], int);
+void _print(char *, int);
+char *mul(char, char *, int, char *, int);
+int check_for_digits(char **);
+void init(char *, int);
 
 #endif
