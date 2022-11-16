@@ -6,9 +6,8 @@
  *
  * Return: a pointer to the appropriate operation
  */
-int (*get_op_func(char *s))(int a, int b)
+int (*get_op_func(char *argv2))(int a, int b)
 {
-	int (*ptr_to_op)(int, int);
 	op_t ops[] = {
 		{"+", op_add},
 		{"-", op_sub},
@@ -20,15 +19,14 @@ int (*get_op_func(char *s))(int a, int b)
 	int i;
 
 	i = 0;
-	while (i < 5)
+	while (ops[i].op)
 	{
-		if (s == ops[i].op)
+		if (strcmp(ops[i].op, argv2) == 0)
 		{
-			ptr_to_op = ops[i].f;
-			return (ptr_to_op);
+			return (ops[i].f);
 		}
 		i++;
 	}
 
-	return (-1);
+	return (NULL);
 }
