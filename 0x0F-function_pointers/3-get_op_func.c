@@ -2,7 +2,7 @@
 
 /**
  * get_op_func - gets the operation to perform
- * @s: operation entered
+ * @argv2: operation entered
  *
  * Return: a pointer to the appropriate operation
  */
