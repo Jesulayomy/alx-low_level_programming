@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 
 	a = (char *)main;
 
-	for (i = 0; i < ; i++)
+	for (i = 0; i < b; i++)
 	{
 		if (i == b - 1)
 		{
