@@ -30,9 +30,9 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		j = 0;
 		if (separator && i != n - 1)
 		{
-			while (seperator[j] != '\0')
+			while (separator[j] != '\0')
 			{
-				printf("%c", seperator[j]);
+				printf("%c", separator[j]);
 				j++;
 			}
 		}
