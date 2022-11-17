@@ -1,17 +1,17 @@
 #include "variadic_functions.h"
 
 /**
- * print_numbers - prints numbers in order
+ * print_strings - prints strings in order
  * @separator: the char to add between them
  * @n: the number of arguments to print
  *
  * Return: nothing, its void bozo
  */
 
-void print_numbers(const char *separator, const unsigned int n, ...)
+void print_strings(const char *separator, const unsigned int n, ...)
 {
 	unsigned int i;
-	int num;
+	char *str;
 	va_list args;
 
 	if (n == 0)
@@ -21,8 +21,11 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 
 	for (i = 0; i < n; i++)
 	{
-		num = va_arg(args, int);
-		printf("%d", num);
+		str = va_arg(args, char *);
+		if (str == NULL)
+			printf("nil");
+		else
+			printf("%s", str);
 
 		if (separator != NULL && i != n - 1)
 			printf("%s", separator);
