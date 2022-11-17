@@ -8,7 +8,7 @@
  */
 void print_all(const char * const format, ...)
 {
-	unsigned int i = 0, n;
+	unsigned int i = 0, n, c = 0;
 	va_list args;
 	char *s, cifs[5] = "cifs";
 
@@ -18,7 +18,7 @@ void print_all(const char * const format, ...)
 		n = 0;
 		while (cifs[n] != '\0')
 		{
-		if (i != 0 && format[i] == cifs[n])
+		if (i != 0 && c != 0 && format[i] == cifs[n])
 			printf(", ");
 		n++;
 		}
@@ -26,24 +26,26 @@ void print_all(const char * const format, ...)
 		{
 			case 'c':
 				printf("%c", va_arg(args, int));
+				c = 1;
 				break;
 			case 'i':
 				printf("%d", va_arg(args, int));
+				c = 1;
 				break;
 			case 'f':
 				printf("%f", va_arg(args, double));
+				c = 1;
 				break;
 			case 's':
 				s = va_arg(args, char *);
+				c = 1;
 				if (s)
 				{
 					printf("%s", s);
 					break;
-				}
-				printf("(nil)");
+				} printf("(nil)");
 				break;
-		}
-		i++;
+		} i++;
 	}
 	printf("\n");
 }
