@@ -8,13 +8,12 @@
  */
 void print_all(const char * const format, ...)
 {
-	unsigned int i = 0, n, l;
+	unsigned int i = 0, n;
 	va_list args;
 	char *s, cifs[5] = "cifs";
 
 	va_start(args, format);
-	l = strlen(format);
-	while (i < l)
+	while (format && format[i] != 0)
 	{
 		n = 0;
 		while (cifs[n] != '\0')
