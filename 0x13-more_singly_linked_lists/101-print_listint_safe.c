@@ -9,14 +9,14 @@
 size_t print_listint_safe(const listint_t *head)
 {
 	size_t nodes = 0;
-	int *addr;
+	const listint_t *addr, *val;
 
 	if (!head)
 		exit(98);
 
 	while (head != NULL)
 	{
-		if (addr <= &head)
+		if (addr >= val)
 		{
 			printf("-> [%p] %d\n", (void *)head, head->n);
 			nodes++;
@@ -25,9 +25,10 @@ size_t print_listint_safe(const listint_t *head)
 		else
 		{
 			printf("[%p] %d\n", (void *)head, head->n);
-			addr = &head;
+			val = head;
 			nodes++;
 			head = head->next;
+			addr = head;
 		}
 	}
 
