@@ -22,8 +22,11 @@ typedef struct listint_s
 int _putchar(char);
 int sum_listint(listint_t *);
 int pop_listint(listint_t **);
-size_t print_listint(const listint_t *);
+int delete_nodeint_at_index(listint_t **, unsigned int);
 size_t listint_len(const listint_t *);
+size_t print_listint(const listint_t *);
+size_t print_listint_safe(const listint_t *);
+listint_t *reverse_listint(listint_t **);
 listint_t *add_nodeint(listint_t **, const int);
 listint_t *add_nodeint_end(listint_t **, const int);
 listint_t *get_nodeint_at_index(listint_t *, unsigned int);
