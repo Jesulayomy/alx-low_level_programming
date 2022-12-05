@@ -1,8 +1,9 @@
 <h1 align="center">ALX-low level programming</h1>
 <h2>C Programming Language </h2>
 This repository goes over the C programming language tasks as is provided in the
-course. 
-```c
+course.
+
+```
 $- gcc surprise.c -o surprise
 $- ./surprise
 C is fun.
