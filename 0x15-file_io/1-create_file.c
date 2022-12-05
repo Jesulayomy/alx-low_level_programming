@@ -1,19 +1,7 @@
 #include "main.h"
 
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
- */
-int _putchar(char c)
-{
-	return (write(STDOUT_FILENO, &c, 1));
-}
-
-/**
- * create_file - Creates a file 
+ * create_file - Creates a file
  * @filename: name to give or open
  * @text_content: to write into the file
  *
@@ -21,6 +9,18 @@ int _putchar(char c)
  */
 int create_file(const char *filename, char *text_content)
 {
-	
+	int file_d, len;
 
+	file_d = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 00600);
+
+	if (file_d == -1 || !filename)
+		return (-1);
+
+	if (!text_content)
+		return (1);
+
+	len = strlen(text_content);
+	write(file_d, text_content, len);
+
+	return (1);
 }
