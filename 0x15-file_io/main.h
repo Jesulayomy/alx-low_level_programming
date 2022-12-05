@@ -10,6 +10,7 @@
 #include <fcntl.h>
 
 ssize_t read_textfile(const char *, size_t);
+int append_text_to_file(const char *, char *);
 int create_file(const char *, char *);
 int _putchar(char);
 
