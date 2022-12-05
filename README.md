@@ -1,5 +1,5 @@
 <h1 align="center">ALX-low level programming</h1>
-<h3>C Programming Language </h3>
+<h2>C Programming Language </h2>
 This repository goes over the C programming language tasks as is provided in the
 course.  
 ```commandline
@@ -8,9 +8,10 @@ $- ./surprise
 C is fun.
 ```
 
-<h3> Projects </h3>
+<h2> Projects </h2>
+
 | Directory | Project |
-| --------- | -------:|
+| --------- | ------- |
 | [0x00-hello_world](0x00-hello_world) | Compilation process, simple printing |
 | [0x01-variables_if_else_while](0x01-variables_if_else_while) | Using conditionals to get different results |
 | [0x02-functions_nested_loops](0x02-functions_nested_loops) | Loops: If, For and While |
