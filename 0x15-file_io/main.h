@@ -9,6 +9,8 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 
+#define BUFFER_SIZE 1024
+
 ssize_t read_textfile(const char *, size_t);
 int append_text_to_file(const char *, char *);
 int create_file(const char *, char *);
