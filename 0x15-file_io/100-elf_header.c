@@ -1,10 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <elf.h>
+#include "main.h"
 
 /**
  * print_addr - prints address
@@ -81,11 +75,11 @@ void print_type(char *ptr)
 }
 
 /**
- * print_osabi - prints osabi
+ * prnt_os_abi - prints osabi
  * @ptr: magic.
  * Return: no return.
  */
-void print_osabi(char *ptr)
+void prnt_os_abi(char *ptr)
 {
 	char osabi = ptr[7];
 
@@ -176,7 +170,7 @@ void check_sys(char *ptr)
 
 	print_data(ptr);
 	print_version(ptr);
-	print_osabi(ptr);
+	prnt_os_abi(ptr);
 	print_type(ptr);
 	print_addr(ptr);
 }
@@ -207,7 +201,7 @@ int check_elf(char *ptr)
  */
 int main(int argc, char *argv[])
 {
-	int fd, ret_read;
+	int file_d, can_read;
 	char ptr[27];
 
 	if (argc != 2)
@@ -216,18 +210,18 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	fd = open(argv[1], O_RDONLY);
+	file_d = open(argv[1], O_RDONLY);
 
-	if (fd < 0)
+	if (file_d < 0)
 	{
 		dprintf(STDERR_FILENO, "Err: file can not be open\n");
 		exit(98);
 	}
 
-	lseek(fd, 0, SEEK_SET);
-	ret_read = read(fd, ptr, 27);
+	lseek(file_d, 0, SEEK_SET);
+	can_read = read(file_d, ptr, 27);
 
-	if (ret_read == -1)
+	if (can_read == -1)
 	{
 		dprintf(STDERR_FILENO, "Err: The file can not be read\n");
 		exit(98);
@@ -240,7 +234,7 @@ int main(int argc, char *argv[])
 	}
 
 	check_sys(ptr);
-	close(fd);
+	close(file_d);
 
 	return (0);
 }
