@@ -1,18 +1,6 @@
 #include "main.h"
 
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
- */
-int _putchar(char c)
-{
-	return (write(STDOUT_FILENO, &c, 1));
-}
-
-/**
  * read_textfile - reads text from a file
  * @filename: file to be read
  * @letters: amount of chars to be read
@@ -45,7 +33,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		if (text[j] == 0)
 			return (j);
 
-		_putchar(text[j]);
+		write(STDOUT_FILENO, &text[j], 1);
 	}
 
 	close(file_d);
