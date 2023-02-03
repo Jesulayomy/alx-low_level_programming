@@ -17,6 +17,11 @@ void hash_table_delete(hash_table_t *ht)
 	free(ht);
 }
 
+/**
+ * free_list - frees a has node linked list
+ * @head: of the list
+ * Return: nothing
+ */
 void free_list(hash_node_t *head)
 {
 	hash_node_t *temp = head, *second;
