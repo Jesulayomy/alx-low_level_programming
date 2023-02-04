@@ -79,7 +79,7 @@ hash_table_t *hash_table_create(unsigned long int);
 int hash_table_set(hash_table_t *, const char *, const char *);
 int shash_table_set(shash_table_t *ht, const char *key, const char *value);
 shash_table_t *shash_table_create(unsigned long int size);
-shash_node_t *add_n_shash(shash_node_t **h, const char *key, const char *value);
+shash_node_t *add_n_shash(shash_node_t **h, const char *, const char *);
 unsigned long int hash_djb2(const unsigned char *);
 unsigned long int key_index(const unsigned char *, unsigned long int);
 void add_i_shash(shash_table_t *ht, shash_node_t *);
